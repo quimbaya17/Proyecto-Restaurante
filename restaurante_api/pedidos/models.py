@@ -15,7 +15,7 @@ class Pedido(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)  
     fecha_pedido = models.DateField(auto_now_add=True)
     hora_pedido = models.TimeField(auto_now_add=True)
-    direccion_entrega = models.CharField(max_length=100)
+    direccion_entrega = models.CharField(max_length=50)
     costo_envio = models.DecimalField(max_digits=10, decimal_places=2)  
     estado_pedido = models.CharField(max_length=20, choices=ESTADO_PEDIDO, default='preparacion')
     monto_total = models.DecimalField(max_digits=10, decimal_places=2)
